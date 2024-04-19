@@ -38,6 +38,7 @@ def animate(frame):
     modulated_wave = (carrier_wave * pulse_signal)
 
     # Noise
+    np.random.seed(13213)
     noise_amplitude = 0.3 # Set the value to 0.0 to eliminate noise
     modulated_wave += np.random.normal(loc=0, scale=noise_amplitude, size=len(x)) * (pulse_signal > 0)
 
@@ -59,10 +60,10 @@ def animate(frame):
     ax[1].legend()
 
     # Plot the updated modulated signal
-    ax[2].plot(x, modulated_wave, label='Modulated Wave', color='blue')
+    ax[2].plot(x, modulated_wave, color='blue')
     ax[2].set_title('OOK Modulated Wave')
     ax[2].set_ylim(-1.5, 1.5)
-    ax[2].legend()
+    # ax[2].legend()
 
     # Plot the updated demodulated signal
     ax[3].plot(x, demodulated_wave, label='Demodulated Wave', color='orange')
