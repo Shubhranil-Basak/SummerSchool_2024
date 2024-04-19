@@ -46,9 +46,9 @@ x = 2 * np.pi * freq * t
 if fourier.lower() in ['y', 'yes']:
     # Number of Fourier series terms
     try:
-        n = (input("Maximum degree of the forier sum polynomial (Default: 70): "))
+        n = (input("Maximum degree of the forier sum polynomial (Default: 100): "))
         if n == "":
-            n = int(70)
+            n = int(100)
         else:
             n = int(n)
         if n <= 0:
@@ -77,9 +77,19 @@ if fourier.lower() in ['y', 'yes']:
 
     # Scale the Fourier series summation by the specified amplitude
     sum_series *= amp
-    plt.plot(t, sum_series, 'g', label='Fourier Series Approximation')
-    plt.plot(t, amp * square_wave(x), 'r--', label='Original Square Wave')
-    plt.title("Fourier Series for Square Wave")
+
+    fig, ax =  plt.subplots(1, 2, figsize=(15, 15))
+
+    ax[0].plot(t, sum_series, 'g', label='Fourier Approximation')
+    ax[0].set_title("Square wave (fourier series)")
+    ax[1].plot(t, amp * square_wave(x), 'r', label='Original Square Wave')
+    ax[1].set_title("Square wave")
+
+    for axes in ax:
+        axes.grid()
+        axes.set_xlabel("Time (s)")
+        axes.set_ylabel("Amplitude")
+        axes.legend()
 
     data = pd.DataFrame({
     'Time': t,
@@ -93,6 +103,8 @@ else:
     amplitude = square(x) * amp
     plt.plot(t, amplitude, 'r', label='Original Square Wave')
     plt.title("Square Wave")
+    plt.xlabel("Time (s)")
+    plt.ylabel("Amplitude")
 
     data = pd.DataFrame({
     'Time': t,
@@ -103,9 +115,8 @@ else:
 
 
 # Plot the graph
-plt.xlabel("Time (s)")
-plt.ylabel("Amplitude")
-plt.legend()
+
+
 plt.show()
 
 
