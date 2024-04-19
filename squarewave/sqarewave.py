@@ -36,8 +36,6 @@ except ValueError as e:
     print(f"Invalid input: {e}")
     exit()
 
-# Number of Fourier series terms
-n = 70
 
 # Time array for plotting
 t = np.linspace(0, 1, samples, endpoint=False)
@@ -46,6 +44,18 @@ t = np.linspace(0, 1, samples, endpoint=False)
 x = 2 * np.pi * freq * t
 
 if fourier.lower() in ['y', 'yes']:
+    # Number of Fourier series terms
+    try:
+        n = (input("Maximum degree of the forier sum polynomial (Default: 70): "))
+        if n == "":
+            n = int(70)
+        else:
+            n = int(n)
+        if n <= 0:
+            raise ValueError("Degree of polynomial should be a positive integer")
+    except ValueError as e:
+        print(f"Invalid input: {e}")
+        exit()
     # Compute Fourier coefficients
     An = []
     Bn = []
