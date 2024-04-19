@@ -46,9 +46,9 @@ x = 2 * np.pi * freq * t
 if fourier.lower() in ['y', 'yes']:
     # Number of Fourier series terms
     try:
-        n = (input("Maximum degree of the forier sum polynomial (Default: 100): "))
+        n = (input("Maximum degree of the forier sum polynomial (Default: 70): "))
         if n == "":
-            n = int(100)
+            n = int(70)
         else:
             n = int(n)
         if n <= 0:
