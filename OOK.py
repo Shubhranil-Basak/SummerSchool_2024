@@ -25,6 +25,8 @@ ax[0].legend()
 pulse_amplitude = 1
 pulse_width = 2.0
 
+
+
 # Animation Function
 def animate(frame):
     for axes in ax[1::]:
