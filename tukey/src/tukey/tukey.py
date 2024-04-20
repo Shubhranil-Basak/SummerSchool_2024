@@ -13,6 +13,10 @@ def divide(a, b):
     else:
         return a / b
 
-__all__ = ['add', 'subtract', 'multiply', 'divide']
+def modulo(a, b: int):
+    if b == 0:
+        return "Cannot divide with zero"
+    else:
+        return a % b
 
-print(divide(8, 4))
+__all__ = ['add', 'subtract', 'multiply', 'divide', 'modulo']

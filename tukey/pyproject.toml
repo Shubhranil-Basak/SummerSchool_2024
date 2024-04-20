@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 name = "tukey"
 
-version = "0.0.2"
+version = "0.1.0"
 
 description = "A python based math module"
 

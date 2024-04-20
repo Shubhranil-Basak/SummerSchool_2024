@@ -1,4 +1,4 @@
-# tukey (v 0.0.2)
+# tukey (v 0.1.0)
 The tukey package provides basic mathematical operations like addition, subtraction, multiplication and division.
 
 * **Code and Documentation:** [https://github.com/Shubhranil-Basak/tukey](https://github.com/Shubhranil-Basak/tukey)
@@ -21,6 +21,7 @@ from tukey import tukey
 print(tukey.add(1, 2))         # Output: 3
 print(tukey.subtract(5, 3))    # Output: 2
 print(tukey.multiply(4, 6))    # Output: 24
+print(tukey.modulo(5, 2))      # Output: 1
 print(tukey.divide(8, 2))      # Output: 4.0
 print(tukey.divide(10, 0))     # Output: Cannot divide by zero
 ```
