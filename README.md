@@ -3,11 +3,11 @@
 ## This repo consists of the code and explaination to the questions asked in the aptitude test
 
 # Table of content
-- [Question 1](#question~1)
-- [Question 2](#question~2)
-- [Question 3](#question~3)
-- [Question 4](#question~4)
-- [Question 5](#question~5)
+- [Question 1](#question-1)
+- [Question 2](#question-2)
+- [Question 3](#question-3)
+- [Question 4](#question-4)
+- [Question 5](#question-5)
 
 # Question 1
 Write a Python code to generate a square wave with user-defined amplitude, frequency, and samples per second. The code should plot the generated waveform and save it to a CSV file with two columns: time and amplitude.
