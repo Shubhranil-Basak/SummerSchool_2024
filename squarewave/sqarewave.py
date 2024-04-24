@@ -31,7 +31,7 @@ def save_to_csv(t, square_wave, filename):
 default_freq = 5.0
 default_amp = 1.0
 default_duty_cycle = 50.0  # Default duty cycle in percentage
-samples = 1000
+samples = int(input("Enter the number of samples: "))
 num_harmonics = 10000 # Number of harmonics to sum
 
 # Time array for plotting
