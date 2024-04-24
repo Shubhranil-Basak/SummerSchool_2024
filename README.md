@@ -105,7 +105,62 @@ refer [here](https://github.com/Shubhranil-Basak/tukey/) for the full documentat
 Describe how the current through a resistor, denoted as I(R), depends on the resistor value, R, when the resistor is connected across a voltage source, V, in a practical setting.
 
 ## Explanation
+In a practical setting where a resistor 𝑅 is connected across a voltage source V, the current I(R) through the resistor depends on the value of the resistor R according to Ohm's Law. Ohm's Law states that the current through a conductor between two points is directly proportional to the voltage across the two points and inversely proportional to the resistance.
+<br>
+<br>
+Mathematically, Ohm’s law can be expressed as:
+$$V\ =\ I\ x\ R$$
 
+${V}$ is the voltage across the resistor
+<br>
+${I}$ is the current flowing through the resistor
+<br>
+${R}$ is the resistance of the resistor
+<br>
+If we rearrange the equation, we get:
+$$I\ =\ \frac{V}{R}$$
+
+To verigy this, I along with a few friends did an experiment (in CEEMS Lab, IIITB), and the readings we got are as follows:
+|Voltage (V)|Resistance (k $\Omega$)|Conductance or 1/Resistance $(k \Omega)^{-1}$|Current (mA)|
+|---|---|---|---|
+|8.84|96.30|0.01|0.09|
+|8.84|0.96|1.04|8.71|
+|8.84|9.79|0.10|0.88|
+|8.84|97.60|0.01|0.09|
+|8.84|0.95|1.05|8.77|
+|8.84|0.92|1.09|8.78|
+|8.84|45.80|0.02|0.18|
+|8.84|4.90|0.20|1.40|
+
+On plotting the readings, we get this:
+<br>
+![temp](https://github.com/Shubhranil-Basak/SummerSchool_2024/assets/144095577/8e717a05-7d83-4fd9-9cba-81e07e32e80f)
+As we can see, the graph is not perfectly linear, there might be many factors, some of the possible ones are:
+* **Resistance of components**: In non-ideal/practical situations all the components like wires, battery, etc. have their own resistance that effect the overall resistance of the circuit.
+* **Least count of multimemter**: The least count/error in the multimeter might lead to reading being displayed be different from the actual value of the current.
+* **Temperature**: After using the resistor for some time, it starts heating (deterministic to some extent using Joule law of heating) as a result it effects the resistor thus changing its value while the experiment was being performed.
+
+To take temperature into account, we have to go beyond the normal Ohm’s law.
+The resistance (R) of a typical resistor can vary with temperature. This temperature dependency is often characterized by the temperature coefficient of the resistance (α), which describes how the resistance changes per degree Celsius (°C) of temperature change. The relationship between resistance (R), temperature (T), and the reference temperature ($T_0$) can be expressed as:
+
+$$R\ =\ R_0[1+\ \alpha(T\ -\ T_0)]$$
+
+Here,
+<br>
+$R_0$ is the resistance at reference temperature $T_0$.
+<br>
+$\alpha$ is the temeprature coefficient of the resistance.
+<br>
+$T$ is the current temperature.
+
+#### Combining Ohm’s law with temperature dependence:
+
+To incorporate temperature (T) into our analysis, we can substitute the expression for resistance (R) into Ohm’s law:
+
+$$I\ =\ \frac{V}{R0[1 + α(T - T0)]}$$
+#### Effect of temperature on current:
+* If the temperature of the resistor increases, the effective resistance increases, thus the current flowing through the resistor decreases.
+* If the temperature of the resistor decreases, the effective resistance decreases, thus the current flowing through the resistor increases.
 
 # Question 5
 In communication systems, explain the need to modulate a signal with a carrier. Write a python code to demonstrate OOK (On-Off keying) modulation and demodulation.
