@@ -15,7 +15,8 @@
     - [code](tukey)
 - [Question 4](#question-4)
     - [Explanation](?tab=readme-ov-file#explanation-3)
-    - [code]()
+    - [Plot fo the readings](Ohms%20Law/IR_plot.py)
+    - [Temperature dependednt plot](Ohms%20Law/IR_temp.py)
 - [Question 5](#question-5)
     - [Explanation](?tab=readme-ov-file#explanation-4)
     - [code](OOK/OOK.py)
@@ -33,13 +34,37 @@ pip install -r requirements.txt
 Write a Python code to generate a square wave with user-defined amplitude, frequency, and samples per second. The code should plot the generated waveform and save it to a CSV file with two columns: time and amplitude.
 
 ## Explanation
+There are multiple ways to make squarewave plot like using op amp, Fourier series transformation, signum function, sum of harmonics etc.
+The formula to compute the sum of the harmonics of sine wave is given by:
+<br>
+<br>
+$$\frac{4}{\pi}\sum_{n\ =\ 1}^{N}\frac{1}{(2n\ -\ 1)}\sin{((2n\ -\ 1)\omega t)}$$
+Here N is the number of harmonic to be used
+<br>
+$\omega\$ is equal to $2\times\pi$
+<br>
+t represents time
+<br>
 
+The other option which is similar to the sum of harmonics is Fourier transormation, the formula is given by:
+<br>
+$$f\left(t\right)=\frac{a_0}{2}+\sum_{n\ =\ 1}^{\infty}a_n\cos{\frac{2\pi\~nt}{T}}\ +\ b_n\sin{\frac{2\pi\~nt}{T}}$$
+<br>
+The Fourier coefficient ${a}\_{0}$, ${a}\_{n}$ and ${b}\_{n}$ can be calculated as follows:
+<br>
+$$a_0\ =\ \frac{2}{T}\int_{0}^{T}{f(t)\ dt}$$
+$$a_n\ =\ \frac{2}{T}\int_{0}^{T}{f(t)\ \cos{\frac{2\pi\ nt}{T}}\ dt}$$
+$$b_n\ =\ \frac{2}{T}\int_{0}^{T}{f(t)\ \sin{\frac{2\pi\ nt}{T}}\ dt}$$
+<br>
+The reason I choose sum of harmonics is because it is easy to compute as compared to Fourier transformation because we have to perform integration to find the Fourier coefficients which is computationally expensive and can give wrong answers with low/mid end hardaware as they might not be able to compute them properly.
+<br>
+The program consist of input field which can control the amplitude, frequency and duty cycle of the square wave. And there is a button that saves a CSV file with number of samples entered by the user.
 
 # Question 2
 Write a Python code that mimics the ADC (Analog-to-Digital Converter) calculator available at [https://circuitdigest.com/calculators/adc-analog-to-digital-convertercalculator](https://circuitdigest.com/calculators/adc-analog-to-digital-convertercalculator).
 
 ## Explanation
-The formula of digital output is given by: $2^N \times \frac{Analog\~Input\~Voltage}{Reference\~Voltage}$.
+The formula of digital output is given by: $$2^N \times \frac{Analog\~Input\~Voltage}{Reference\~Voltage}$$.
 <br>
 <br>
 The table that I was able to come up with for different values of Analog and Reference voltage is as follows:
