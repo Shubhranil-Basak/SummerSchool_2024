@@ -120,7 +120,9 @@ ${R}$ is the resistance of the resistor
 If we rearrange the equation, we get:
 $$I\ =\ \frac{V}{R}$$
 
-To verigy this, I along with a few friends did an experiment (in CEEMS Lab, IIITB), and the readings we got are as follows:
+This shows the if the voltage (V) is kept constant then the current (I) is inversly proportional to the Resistance (R)
+<br>
+To verify this, I along with some friends did an experiment (in CEEMS Lab, IIITB), and the readings we got are as follows:
 |Voltage (V)|Resistance (k $\Omega$)|Conductance or 1/Resistance $(k \Omega)^{-1}$|Current (mA)|
 |---|---|---|---|
 |8.84|96.30|0.01|0.09|
