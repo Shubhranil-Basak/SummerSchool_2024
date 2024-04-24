@@ -17,9 +17,10 @@ sorted_current, sorted_resistance, sorted_resistance_inv = zip(*sorted_data)
 calculated_current = [VOLTAGE / r for r in sorted_resistance]
 
 # Plot the sorted data
-plt.plot(sorted_resistance_inv, sorted_current, 'b--', marker='o')
-plt.plot(sorted_resistance_inv, calculated_current, 'r-')
+plt.plot(sorted_resistance_inv, sorted_current, 'b--', marker='o', label="Measured")
+plt.plot(sorted_resistance_inv, calculated_current, 'r-', label="Theoretical")
 plt.ylabel('Current (mA)')
 plt.xlabel('Resistance inverse (1/KΩ)')
 plt.title("Ohm's Law")
+plt.legend()
 plt.show()
