@@ -74,7 +74,7 @@ As of now It support basic arithmatic operators including:
 
 I have plans of Expanding it do include functions and methods that can be helpful for data extraction and EDA.
 
-refere [here](https://github.com/Shubhranil-Basak/tukey/) for the full documentation of the package
+refer [here](https://github.com/Shubhranil-Basak/tukey/) for the full documentation of the package
 
 # Question 4
 Describe how the current through a resistor, denoted as I(R), depends on the resistor value, R, when the resistor is connected across a voltage source, V, in a practical setting.
@@ -86,4 +86,14 @@ Describe how the current through a resistor, denoted as I(R), depends on the res
 In communication systems, explain the need to modulate a signal with a carrier. Write a python code to demonstrate OOK (On-Off keying) modulation and demodulation.
 
 ## Explanation
+There are multiple reasons to modulate a signal with a carrier wave. A few of them are:
+* **Frequency Translation**: Modulation can help to shift the frequency spectrum of the original frequency to a higher frequency range suitable for efficient transmission and reception. It is because the frequency of the original baseband signal is different from those used for communication purposes like frequency bands for Radio or microwaves.
+* **Antenna Efficiency**: The use of a carrier wave at a higher frequency facilitates efficient transmission through antennas. Antennas are more effective at radiating EM waves at higher frequencies, especially when compared to the lower frequencies typical of baseband signals. This efficiency is crucial for long-range communication and for minimizing the size and complexity of antennas.
+* **Signal integrity and noise immunity**: Modulation helps in preserving the integrity of the transmitted signal and makes it more immune to noise and interference. The carrier wave can carry the modulated signal over long distances without significant loss of information, as compared to direct transmission of baseband signals.
+* **Multiplexing and channel allocation**: Modulating signals with different carrier frequencies enables multiplexing—simultaneously transmitting multiple signals over the same communication medium.
+* **Comaptibility with transmission media**: Different transmission media (like cables, optical fibers, etc.) have specific characteristics that determine their suitability for transmitting signals at particular frequencies. By modulating a signal, we can match the characteristics of the transmission medium, optimizing the signal's propagation and minimizing data loss.
 
+My assumptions:
+1.	Considering there is no noise in carrier and signal wave.
+2.	Considering there is noise only in modulated wave
+3.	Considering smoothing od demodulated wave is necessary else it might have false signals because of noise.
